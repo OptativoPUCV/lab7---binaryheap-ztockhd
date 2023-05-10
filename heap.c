@@ -20,6 +20,11 @@ typedef struct Heap{
 void* heap_top(Heap* pq)
 {
   Heap *nuevo = pq;
+  if(nuevo->size == 0)
+  {
+    free(nuevo);
+    return NULL;
+  }
   if(nuevo->heapArray[0].data == NULL)
   {
     free(nuevo);
