@@ -20,7 +20,7 @@ typedef struct Heap{
 void* heap_top(Heap* pq)
 {
   Heap *nuevo = pq;
-  if(nuevo->heapArray == NULL)
+  if(nuevo->heapArray[0].data == NULL)
   {
     free(nuevo);
     return NULL;
