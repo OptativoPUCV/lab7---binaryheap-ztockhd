@@ -41,5 +41,5 @@ Heap* createHeap()
   nuevo->size = 0;
   nuevo->capac = 3;
 
-  return NULL;
+  return nuevo;
 }
