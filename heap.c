@@ -37,9 +37,12 @@ Heap* createHeap()
   Heap *nuevo = malloc(sizeof(Heap));
   if(nuevo == NULL) return NULL;
   nuevo->heapArray = malloc(sizeof(Heap));
-  if(nuevo->heapArray == NULL) return NULL;
   nuevo->size = 0;
   nuevo->capac = 3;
+  if(nuevo->heapArray == NULL) return NULL;
+  nuevo->heapArray->data = NULL;
+  nuevo->heapArray->priority = 0;
+  
 
   return nuevo;
 }
