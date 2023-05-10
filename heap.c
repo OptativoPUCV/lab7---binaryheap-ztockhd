@@ -27,7 +27,7 @@ void* heap_top(Heap* pq)
   }
 
   void* dato = nuevo->heapArray[0].data;
-  return dato;
+  return NULL;
 }
 
 
