@@ -17,8 +17,17 @@ typedef struct Heap{
 } Heap;
 
 
-void* heap_top(Heap* pq){
+void* heap_top(Heap* pq)
+{
+  Heap *nuevo = pq;
+  if(nuevo->heapArray == NULL)
+  {
+    free(nuevo);
     return NULL;
+  }
+
+  void* dato = nuevo->heapArray->data;
+  return dato;
 }
 
 
