@@ -19,25 +19,34 @@ typedef struct Heap{
 
 void* heap_top(Heap* pq)
 {
-  Heap *nuevo = pq;
-  if(nuevo->size == 0)
+  if(pq->size == 0)
   {
-    free(nuevo);
     return NULL;
   }
-  if(nuevo->heapArray[0].data == NULL)
-  {
-    free(nuevo);
-    return NULL;
-  }
-  void* dato = nuevo->heapArray[0].data;
-  return dato;
+  return pq->heapArray[0].data;;
 }
 
 
 
-void heap_push(Heap* pq, void* data, int priority){
+void heap_push(Heap* pq, void* data, int priority)
+{
+  int i = pq -> size;
+  
+  if(pq -> size == pq -> capac)
+  {
+    pq -> capac = pq -> capac * 2 + 1;
+    pq -> heapArray = realloc(pq -> heapArray, pq -> capac * sizeof(heapElem));
+  }
 
+  while (i > 0 && priority > pq -> heapArray[(i - 1) / 2].priority)
+  {
+    pq -> heapArray[i] = pq -> heapArray[(i - 1) / 2];
+    i = (i - 1) / 2;
+  }
+
+  pq -> heapArray[i].data = data;
+  pq -> heapArray[i].priority = priority;
+  pq -> size++;
 }
 
 
