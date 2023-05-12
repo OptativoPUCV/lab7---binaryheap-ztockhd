@@ -49,7 +49,7 @@ void heap_push(Heap* pq, void* data, int priority)
   pq -> size++;
 }
 
-void heaoifyHaciaAbajo(Heap* pq, int aux)
+void heapifyHaciaDown(Heap* pq, int aux)
 {
   int der = 2 * aux + 2;
   int izq = 2 * aux + 1;
@@ -68,7 +68,7 @@ void heaoifyHaciaAbajo(Heap* pq, int aux)
     heapElem temporal = pq -> heapArray[aux];
     pq -> heapArray[aux] = pq -> heapArray[mayor];
     pq -> heapArray[mayor] = temporal;
-    heapifyHaciaAbajo(pq, mayor);
+    heapifyHaciaDown(pq, mayor);
   }
 }
 void heap_pop(Heap* pq)
@@ -83,7 +83,7 @@ void heap_pop(Heap* pq)
   pq -> heapArray[pq -> size - 1] = temporal;
 
   pq -> size--;
-  heapifyHaciaAbajo(pq, 0);
+  heapifyHaciaDown(pq, 0);
 } 
 
 Heap* createHeap()

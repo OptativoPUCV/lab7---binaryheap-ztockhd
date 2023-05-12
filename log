@@ -143,3 +143,9 @@ heap.c:71:5: error: implicit declaration of function ‘heapifyHaciaAbajo’; di
 cc1: all warnings being treated as errors
 Compilation failed
 25a61ac
+Fri 12 May 2023 06:54:05 PM UTC: 
+ heap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+ tests:  8|0
+total_score: 70/70
+d1493a9
